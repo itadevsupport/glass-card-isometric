@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>effetto vetro + animazione isometrica</title>
+    <style>
+        body {
+            background-color: #ccc;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background-color: rgba(247, 27, 27, 0.5);
+            width: 400px;
+            height: 250px;
+            border-radius: 1.5em;
+            text-align: center;
+            line-height: 250px;
+            vertical-align: middle;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:22px;
+            border-top: 3px solid rgb(246, 83, 83);
+            border-right: 3px solid rgb(81, 29, 29);
+            backdrop-filter: blur(5px);
+            filter: drop-shadow(30px 30px 50px rgb(87, 84, 84));
+            animation: moveCard 5s ease-in-out infinite;
+        }
+        @keyframes moveCard {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: rotateX(60deg) rotateY(-45deg);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(0deg);
+            }
+        }
+        .circle {
+            background-color: #f1d534;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            position: absolute;
+            top:-200px;
+            left: -200px;
+            z-index: -5;
+        }
+        .square {
+            background-color: #004ede;
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            bottom:-200px;
+            left: 450px;
+            z-index: -5;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        Lorem <strong>ipsum</strong> dolor sit amet.
+    </div>
+
+    <div class="circle"></div>
+    <div class="square"></div>
+
+
+</body>
+</html>
